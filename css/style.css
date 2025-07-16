@@ -36,31 +36,66 @@ footer{
     flex-shrink: 0;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #cccccc;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
 nav ul{
     padding: 20px 0;
     margin: 0;
-    background-color: gray;
+    background-color: transparent;
     font-size: 18px;
     font-family: "Helvetica Now Text Medium", Helvetica, Arial, sans-serif;
+    display: flex;
 }
 
 nav li{
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 nav a{
-    color: black;
+    background-color: #2b2b2b;
+    color: white;
     text-decoration: none;
-    padding: 10px;
+    padding: 12px 22px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    display: inline-block;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 nav a:hover{
-    transition: color 0.3s, background-color 0.3s, border-radius 0.3s;;
-    background-color: floralwhite;
-    color: black;
-    border-radius: 5px;
-    padding: 10px 15px;
+    background-color: #444444;
+    transform: scale(1.05);
+    color: white;
+}
+
+nav a.active {
+    background-color: #555555;
+    border: 2px solid white;
+    transform: scale(1.08);
+    color: white;
+}
+
+nav a.botao-cabuloso {
+    background-color: #0033A0;
+    border: 2px solid #0033A0;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+nav a.botao-cabuloso:hover {
+    background-color: #0055dd;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 85, 221, 0.6);
+    color: white;
 }
 
 h1{
@@ -78,7 +113,8 @@ ul{
     padding-left: 0;
 }
 
-.image-destaque,
+.imagem-destaque,
+.imagem-esporte,
 .imagem-exemplo {
     width: 100%;
     max-width: 500px;
@@ -89,18 +125,119 @@ ul{
     overflow-clip-margin: content-box;
     overflow: clip;
     filter: saturate(1.2);
+    border-radius: 12px;
 }
 
-.image-destaque:hover,
+.imagem-destaque:hover,
+.imagem-esporte:hover,
 .imagem-exemplo:hover {
     transform: scale(1.1);
     filter: saturate(1.5);
-    border-radius: 5px;
+    border-radius: 12px;
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.image-destaque,
+.imagem-destaque,
+.imagem-esporte,
 .imagem-exemplo{
     transform: scale(1.05);
+}
+
+.lista-times {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.lista-times li {
+    background-color: #1e1e1e;
+    padding: 12px 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lista-times li:hover {
+    transform: scale(1.05);
+    background-color: #333333;
+}
+
+.lista-times a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-cruzeiro {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.logo-cruzeiro:hover {
+    transform: scale(1.1);
+}
+
+.copa-mundo-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.copa-mundo-section .imagem-destaque {
+    flex: 1 1 300px;
+    max-width: 400px;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+.texto-copa {
+    text-align: center;
+    flex: 1 1 300px;
+    max-width: 500px;
+    margin: 0 auto; 
+    width: 100%;
+}
+
+.texto-copa h2 {
+    line-height: 1.5;
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    widht: 100%;
+}
+
+.texto-copa p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: black;
+    text-align: center;
+    width: 100%;
+}
+
+.descricao-neymar {
+    max-width: 600px;
+    margin: 25px auto;
+    text-align: center;
+    font-size: 18px;
+    color: black;
 }
